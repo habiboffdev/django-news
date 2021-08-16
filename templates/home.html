@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Kerakli Maqolalar</title>
+    <meta name="description" content="Django da yaratgan birinchi oddiy saytim">
+	{% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+
+<div id="wrapall">
+	<div id="sidebar">
+		<div id="stickThis">
+			<div id="sidebarContent">
+				<aside>
+					{% for post in object_list %}
+					<div>{{ post.title }}</div>
+
+					{% endfor %}
+					<a class="back2Top" href="#">⮝&nbsp;Back to&nbsp;top&nbsp;⮝</a>
+				</aside>
+			</div>
+		</div>
+		<div id="stick-here"></div>
+	</div>
+	<div id="main">
+		<section id="page">
+			<main>
+				<article>
+					<h1>KUN MAQOLALARI</h1>
+					<p><strong>Django orqali Mirzo.Dev tomonidan yaratildi</strong></p>
+				</article>
+				{% for post in object_list %}
+				<article>
+					<h2>{{ post.title }}</h2>
+					<p>{{ post.text }}</p>
+				</article>
+				{% endfor %}
+			</main>
+		</section>
+	</div>
+</div>
+
+</body>
+</html>
